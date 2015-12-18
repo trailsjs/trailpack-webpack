@@ -1,0 +1,36 @@
+{
+  "name": "trailpack-webpack",
+  "version": "0.0.0",
+  "description": ":package: Webpack Trailpack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint . && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaumard/trailpack-webpack.git"
+  },
+  "keywords": [
+    "trails",
+    "trailpack",
+    "webpack"
+  ],
+  "author": "Jimmy Aumard <jimmy.aumard@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaumard/trailpack-webpack/issues"
+  },
+  "eslintConfig": {
+    "extends": "trails"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-trails": "0.0.9",
+    "mocha": "^2.3.4"
+  },
+  "homepage": "https://github.com/jaumard/trailpack-webpack#readme",
+  "dependencies": {
+    "trailpack": "0.0.14",
+    "webpack": "^1.12.9"
+  }
+}
