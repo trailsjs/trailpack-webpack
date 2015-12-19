@@ -1,6 +1,3 @@
-/**
- * Created by jaumard on 16/12/2015.
- */
 'use strict'
 
 const Trailpack = require('trailpack')
