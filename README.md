@@ -38,8 +38,9 @@ module.exports.webpack = {
     entry: [
       './assets/js',
     ],
+    context: process.cwd(),
     output: {
-      path: path.resolve(__dirname, '.tmp/public/js'),
+      path: '.tmp/public/js',
       filename: 'bundle.js'
     },
     plugins: [
