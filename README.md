@@ -32,7 +32,7 @@ Below is an example of using webpack to compile a [React.js](https://facebook.gi
 var webpack = require('webpack');
 
 // compile js assets into a single bundle file
-module.exports.webpack = {
+module.exports = {
   options: {
     devtool: 'eval',
     entry: [
