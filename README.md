@@ -23,7 +23,7 @@ In this setting, webpack will watch for changes in the directories you specify i
 
 ### b. Configure Webpack
 
-This trailpack uses includes basic [Webpack Configuration](https://webpack.github.io/docs/configuration.html).
+This trailpack includes basic [Webpack Configuration](https://webpack.github.io/docs/configuration.html).
 Below is a more complete example of using webpack to compile a [React.js](https://facebook.github.io/react/) application located in `assets/js/`.
 
 ```js
