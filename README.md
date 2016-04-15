@@ -23,42 +23,48 @@ In this setting, webpack will watch for changes in the directories you specify i
 
 ### b. Configure Webpack
 
-This trailpack uses standard [Webpack Configuration](https://webpack.github.io/docs/configuration.html).
-Below is an example of using webpack to compile a [React.js](https://facebook.github.io/react/) application located in `assets/js/`.
+This trailpack includes basic [Webpack Configuration](https://webpack.github.io/docs/configuration.html).
+Below is a more complete example of using webpack to compile a [React.js](https://facebook.github.io/react/) application located in `assets/js/`.
 
 ```js
 // config/webpack.js
+const path = require('path');
 
-var webpack = require('webpack');
-
-// compile js assets into a single bundle file
 module.exports = {
   options: {
-    devtool: 'eval',
-    entry: [
-      './assets/js',
-    ],
-    context: process.cwd(),
-    output: {
-      path: '.tmp/public/js',
-      filename: 'bundle.js'
+    resolve: {
+      root: path.join(__dirname, '../')
     },
-    plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin()
+    entry: [
+      './src/index'
     ],
+    output: {
+      path: path.join(__dirname, '../../../dist'),
+      filename: 'bundle.js',
+      publicPath: '/dist/'
+    },
     module: {
-      loaders: [
-        // requires "npm install --save-dev babel-loader"
-        { test: /\.js$/, loaders: ['babel-loader?stage=0'] },
-        { test: /\.css$/, loader: 'style!css' }
-      ]
+      loaders: [{
+        test: /\.js$/,
+        loader: 'babel',
+        query: {
+          presets: ['react', 'es2015', 'stage-0']
+        }
+      }, {
+        test: /\.scss$/,
+        loaders: [
+          'style',
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          'sass'
+        ]
+      }, {
+        test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        loader: 'file-loader?name=fonts/[name].[ext]'
+      }, {
+        test: /\.(png|jpg)$/,
+        loader: 'url?limit=25000'
+      }]
     }
-  },
-
-  // docs: https://webpack.github.io/docs/node.js-api.html#compiler
-  watchOptions: {
-    aggregateTimeout: 300
   }
 };
 ```

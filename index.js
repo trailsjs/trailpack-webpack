@@ -1,7 +1,6 @@
 'use strict'
 
 const Trailpack = require('trailpack')
-//const lib = require('./lib')
 const _ = require('lodash')
 const webpack = require('webpack')
 
@@ -9,9 +8,8 @@ const webpack = require('webpack')
  * Webpack Trailpack
  *
  * @class Webpack
- * @see {@link http://trailsjs.io/doc/trailpack
  *
- * Generate asset with Webpack.js
+ * Use Webpack in your Trails application
  */
 module.exports = class Webpack extends Trailpack {
 
@@ -23,8 +21,8 @@ module.exports = class Webpack extends Trailpack {
     const logger = this.app.config.log.logger
 
     if (!config.webpack.options) {
-      logger.warn('trailspack-webpack: no Webpack "options" are defined.')
-      logger.warn('trailspack-webpack: Please configure config/webpack.js')
+      logger.warn('trailpack-webpack: no webpack "options" are defined.')
+      logger.warn('trailpack-webpack: Please configure config/webpack.js')
     }
     return Promise.resolve()
   }
@@ -38,15 +36,15 @@ module.exports = class Webpack extends Trailpack {
       this.compiler = webpack(this.app.config.webpack.options, (err, stats) => {
         if (err) return reject(err)
 
-        logger.info('trailspack-webpack: compiler loaded.')
-        logger.silly('trailspack-webpack: ', stats.toString())
+        logger.info('trailpack-webpack: compiler loaded.')
+        logger.silly('trailpack-webpack: ', stats.toString())
 
         if (process.env.NODE_ENV == 'development') {
-          logger.info('trailspack-webpack: watching...')
+          logger.info('trailpack-webpack: watching...')
           this.compiler.watch(_.extend({}, this.app.config.webpack.watchOptions), this.afterBuild.bind(this))
         }
         else {
-          logger.info('trailspack-webpack: running...')
+          logger.info('trailpack-webpack: running...')
           this.compiler.run(this.afterBuild.bind(this))
         }
         resolve()
@@ -56,21 +54,13 @@ module.exports = class Webpack extends Trailpack {
 
   afterBuild(err, rawStats) {
     const logger = this.app.config.log.logger
-    if (err) return logger.error('trailspack-webpack: FATAL ERROR', err)
+    if (err) return logger.error('trailpack-webpack: FATAL ERROR', err)
 
-    const stats = rawStats.toJson()
-
-    logger.debug('trailspack-webpack: Build Info\n' + rawStats.toString({
+    logger.debug('trailpack-webpack: Build Info\n' + rawStats.toString({
         colors: true,
         chunks: false
       }))
 
-    if (stats.errors.length > 0) {
-      logger.error('trailspack-webpack:', stats.errors)
-    }
-    if (stats.warnings.length > 0) {
-      logger.warn('trailspack-webpack:', stats.warnings)
-    }
   }
 
   constructor(app, config) {
