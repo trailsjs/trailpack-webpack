@@ -21,7 +21,7 @@ module.exports = {
           presets: ['es2015', 'stage-0']
         }
       }, {
-        test: /\.css$/, 
+        test: /\.css$/,
         loader: 'style-loader!css-loader'
       }, {
         test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,

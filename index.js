@@ -56,8 +56,6 @@ module.exports = class Webpack extends Trailpack {
     const logger = this.app.config.log.logger
     if (err) return logger.error('trailpack-webpack: FATAL ERROR', err)
 
-    const stats = rawStats.toJson()
-
     logger.debug('trailpack-webpack: Build Info\n' + rawStats.toString({
         colors: true,
         chunks: false
