@@ -57,9 +57,9 @@ module.exports = class Webpack extends Trailpack {
     if (err) return logger.error('trailpack-webpack: FATAL ERROR', err)
 
     logger.debug('trailpack-webpack: Build Info\n' + rawStats.toString({
-        colors: true,
-        chunks: false
-      }))
+      colors: true,
+      chunks: false
+    }))
 
   }
 
