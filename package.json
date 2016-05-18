@@ -1,7 +1,7 @@
 {
   "name": "trailpack-webpack",
   "version": "0.0.3",
-  "description": ":package: Webpack Trailpack.",
+  "description": "Webpack Trailpack",
   "main": "index.js",
   "scripts": {
     "test": "eslint . && mocha"
