@@ -33,7 +33,7 @@ module.exports = class Webpack extends Trailpack {
   initialize() {
     const logger = this.app.config.log.logger
     return new Promise((resolve, reject) => {
-      this.compiler = webpack(this.app.config.webpack.options, (err, stats) => {
+      this.compiler = webpack(_.cloneDeep(this.app.config.webpack.options), (err, stats) => {
         if (err) return reject(err)
 
         logger.info('trailpack-webpack: compiler loaded.')
