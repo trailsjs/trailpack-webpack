@@ -13,7 +13,12 @@
   "keywords": [
     "trails",
     "trailpack",
-    "webpack"
+    "webpack",
+    "asset pipeline",
+    "build",
+    "compile",
+    "transpile",
+    "babel"
   ],
   "author": "Jimmy Aumard <jimmy.aumard@gmail.com>",
   "license": "MIT",
@@ -36,7 +41,16 @@
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.23.1",
     "style-loader": "^0.13.1",
-    "trailpack": "0.0.14",
+    "trailpack": "^1.0.0",
     "webpack": "^1.13.0"
-  }
+  },
+  "bundledDependencies": [
+    "babel-core",
+    "babel-loader",
+    "babel-preset-es2015",
+    "babel-preset-stage0",
+    "css-loader",
+    "style-loader",
+    "webpack"
+  ]
 }
