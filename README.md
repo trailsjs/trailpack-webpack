@@ -34,7 +34,7 @@ Below is a more complete example of using webpack to compile a [React.js](https:
 
 ```js
 // config/webpack.js
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   options: {
@@ -72,7 +72,7 @@ module.exports = {
       }]
     }
   }
-};
+}
 ```
 
 ## 3. Start!
