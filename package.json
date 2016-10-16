@@ -1,6 +1,6 @@
 {
   "name": "trailpack-webpack",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Webpack Trailpack",
   "main": "index.js",
   "scripts": {
