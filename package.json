@@ -1,6 +1,6 @@
 {
   "name": "trailpack-webpack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack Trailpack: Watch/hotload your frontend code with webpack and trails",
   "main": "index.js",
   "scripts": {
