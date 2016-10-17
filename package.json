@@ -25,6 +25,7 @@
   "bugs": {
     "url": "https://github.com/jaumard/trailpack-webpack/issues"
   },
+  "homepage": "https://github.com/jaumard/trailpack-webpack#readme",
   "eslintConfig": {
     "extends": "trails"
   },
@@ -33,7 +34,9 @@
     "eslint-config-trails": "^1.0.7",
     "mocha": "^2.5.1"
   },
-  "homepage": "https://github.com/jaumard/trailpack-webpack#readme",
+  "peerDependencies": {
+    "webpack": "^1.13.0"
+  },
   "dependencies": {
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
