@@ -14,21 +14,12 @@ module.exports = {
       publicPath: '/dist/'
     },
     module: {
-      loaders: [{
+      rules: [{
         test: /\.js$/,
         loader: 'babel',
         query: {
           presets: ['es2015', 'stage-0']
         }
-      }, {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      }, {
-        test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-        loader: 'file-loader?name=fonts/[name].[ext]'
-      }, {
-        test: /\.(png|jpg)$/,
-        loader: 'url?limit=25000'
       }]
     }
   }
