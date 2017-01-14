@@ -35,7 +35,7 @@
     "mocha": "^2.5.1"
   },
   "peerDependencies": {
-    "webpack": "^1.13.0"
+    "webpack": "^2.1.0-beta.28,"
   },
   "dependencies": {
     "babel-core": "^6.9.0",
@@ -45,6 +45,6 @@
     "css-loader": "^0.23.1",
     "style-loader": "^0.13.1",
     "trailpack": "^1.0.2",
-    "webpack": "^1.13.0"
+    "webpack": "^2.1.0-beta.28,"
   }
 }
